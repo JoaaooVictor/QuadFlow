@@ -1,6 +1,5 @@
 <Solution>
   <Folder Name="/Modules/" />
-  <Folder Name="/Modules/Auth/" />
   <Folder Name="/Modules/Order/">
     <Project Path="Modules/Order/Order.Application/Order.Application.csproj" />
     <Project Path="Modules/Order/Order.Domain/Order.Domain.csproj" />
