@@ -1,0 +1,24 @@
+<Solution>
+  <Folder Name="/Modules/" />
+  <Folder Name="/Modules/Auth/" />
+  <Folder Name="/Modules/Order/">
+    <Project Path="Modules/Order/Order.Application/Order.Application.csproj" />
+    <Project Path="Modules/Order/Order.Domain/Order.Domain.csproj" />
+    <Project Path="Modules/Order/Order.Infrastructure/Order.Infrastructure.csproj" />
+    <Project Path="Modules/Order/Order.Tests/Order.Tests.csproj" Id="19bd8013-a38d-46b1-9997-e7cba0803b71" />
+  </Folder>
+  <Folder Name="/Modules/Stock/">
+    <Project Path="Modules/Stock/Stock.Application/Stock.Application.csproj" />
+    <Project Path="Modules/Stock/Stock.Domain/Stock.Domain.csproj" />
+    <Project Path="Modules/Stock/Stock.Infrastructure/Stock.Infrastructure.csproj" />
+    <Project Path="Modules/Stock/Stock.Tests/Stock.Tests.csproj" Id="080226d0-1dc4-41f4-9baa-05ca769ce6e7" />
+  </Folder>
+  <Folder Name="/Modules/User/">
+    <Project Path="Modules/User/User.Application/User.Application.csproj" />
+    <Project Path="Modules/User/User.Domain/User.Domain.csproj" />
+    <Project Path="Modules/User/User.Infrastructure/User.Infrastructure.csproj" />
+    <Project Path="Modules/User/User.Tests/User.Tests.csproj" Id="e06b88ef-c810-456d-a73c-ca1ac206103d" />
+  </Folder>
+  <Project Path="QuadFlow.Api/QuadFlow.Api.csproj" />
+  <Project Path="QuadFlow.BuildingBlocks/QuadFlow.BuildingBlocks.csproj" />
+</Solution>
