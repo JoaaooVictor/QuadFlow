@@ -13,6 +13,11 @@ namespace Infrastructure.Repositories
 			_dbContext = context;
 		}
 
+		public async Task CreateUser(User user)
+		{
+			await _dbContext.Users.AddAsync(user);
+		}
+
 		public Task<List<User>> GetAll()
 		{
 			return _dbContext.Users.ToListAsync();
@@ -21,8 +26,7 @@ namespace Infrastructure.Repositories
 		public async Task<User> GetUserByEmail(string email)
 		{
 			return await _dbContext.Users
-				.Where(u => u.Email == email)
-				.FirstAsync();
+				.FirstOrDefaultAsync(u => u.Email == email);
 		}
 
 		public async Task<User> GetUserById(int id)

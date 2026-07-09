@@ -1,4 +1,5 @@
 ﻿namespace Domain.Entities;
+
 public sealed class User
 {
 	public int UserId { get; internal set; }

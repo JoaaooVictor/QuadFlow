@@ -9,4 +9,5 @@ public interface IUserRepository
 	Task<List<User>> GetAll();
 	Task UpdateUser(User user);
 	Task RemoveUser(User user);
+	Task CreateUser(User user);
 }
