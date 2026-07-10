@@ -7,6 +7,6 @@ namespace Application.Interfaces
 	public interface IUserUseCases
 	{
 		Task<Result> Register(RegisterUserRequestDto request);
-		Task<Result<User>> GetUserById(int id);
+		Task<Result<GetUserByIdResponse>> GetUserById(int id);
  	}
 }

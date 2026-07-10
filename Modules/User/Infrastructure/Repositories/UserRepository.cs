@@ -18,22 +18,21 @@ namespace Infrastructure.Repositories
 			await _dbContext.Users.AddAsync(user);
 		}
 
-		public Task<List<User>> GetAll()
+		public async Task<List<User>> GetAll()
 		{
-			return _dbContext.Users.ToListAsync();
+			return await _dbContext.Users.ToListAsync();
 		}
 
-		public async Task<User> GetUserByEmail(string email)
+		public async Task<User?> GetUserByEmail(string email)
 		{
 			return await _dbContext.Users
 				.FirstOrDefaultAsync(u => u.Email == email);
 		}
 
-		public async Task<User> GetUserById(int id)
+		public async Task<User?> GetUserById(int id)
 		{
 			return await _dbContext.Users
-				.Where(u => u.UserId == id)
-				.FirstAsync();
+				.FirstOrDefaultAsync(u => u.UserId == id);
 		}
 
 		public Task RemoveUser(User user)

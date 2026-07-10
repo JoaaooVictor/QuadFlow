@@ -22,16 +22,25 @@ namespace Application.UseCases
 			_passwordHash = passwordHash;
 		}
 
-		public async Task<Result<User>> GetUserById(int id)
+		public async Task<Result<GetUserByIdResponse>> GetUserById(int id)
 		{
-			var user = await _userRepository.GetUserById(id);
+			var userEntity = await _userRepository.GetUserById(id);
 
-			if (user is null)
+			if (userEntity is null)
 			{
-				return Result<User>.Fail("Usuário não encontrado");
+				return Result<GetUserByIdResponse>.Fail("Nenhum usuário não encontrado");
 			}
 
-			return Result<User>.Success("Usuário encontrado", user);
+			var user = new GetUserByIdResponse
+			{
+				UserId = userEntity.UserId,
+				Name = userEntity.Name,
+				Email = userEntity.Email,
+				Active = userEntity.Active,
+				CreatedAt = userEntity.CreatedAt
+			};
+
+			return Result<GetUserByIdResponse>.Success("Usuário encontrado", user);
 		}
 
 		public async Task<Result> Register(RegisterUserRequestDto request)
