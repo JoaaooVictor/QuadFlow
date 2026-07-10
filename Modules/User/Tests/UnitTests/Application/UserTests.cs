@@ -14,7 +14,6 @@ namespace Tests.UnitTests.Application
 		private readonly Mock<IPasswordHash> _hasher;
 		private readonly Mock<IJwtProvider> _jwt;
 		private readonly Mock<IUnitOfWork> _unitOfWork;
-
 		private readonly UserUseCases _useCase;
 
 		public UserTests()

@@ -28,7 +28,7 @@ namespace Application.UseCases
 
 			if (userEntity is null)
 			{
-				return Result<GetUserByIdResponse>.Fail("Nenhum usuário não encontrado");
+				return Result<GetUserByIdResponse>.Fail("Nenhum usuário encontrado");
 			}
 
 			var user = new GetUserByIdResponse
