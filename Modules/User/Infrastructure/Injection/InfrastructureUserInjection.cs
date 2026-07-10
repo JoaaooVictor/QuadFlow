@@ -4,6 +4,7 @@ using Domain.Interfaces;
 using Infrastructure.Authentication;
 using Infrastructure.Persistence;
 using Infrastructure.Repositories;
+using Infrastructure.Security;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using QuadFlow.SharedKernel.Interfaces;
@@ -23,6 +24,7 @@ namespace Infrastructure.Injection
 			services.AddScoped<IJwtProvider, JwtProvider>();
 			services.AddScoped<IUserUseCases, UserUseCases>();
 			services.AddScoped<IUnitOfWork, UserUnitOfWork>();
+			services.AddScoped<IPasswordHash, BcryptPasswordHasher>();
 
 			return services;
 		}

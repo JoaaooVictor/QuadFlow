@@ -1,4 +1,4 @@
-﻿using Application.DTOs;
+﻿using Application.DTOs.UserDtos;
 using Application.Interfaces;
 using Application.UseCases;
 using Microsoft.AspNetCore.Http;
@@ -17,9 +17,30 @@ namespace QuadFlow.Api.Controllers
 		}
 
 		[HttpPost]
+		[Route("create-user")]
 		public async Task<IActionResult> CreateUser(RegisterUserRequestDto request)
 		{
 			var response = await _userUseCases.Register(request);
+
+			if (!response.Sucess) 
+			{
+				return BadRequest(response.Message);
+			}
+
+			return Ok(response.Message);
+		}
+
+		[HttpGet]
+		[Route("get-user-by-id")]
+		public async Task<IActionResult> GetUserById(int id)
+		{
+			var response = await _userUseCases.GetUserById(id);
+
+			if (!response.Sucess)
+			{
+				return BadRequest(response.Message);
+			}
+
 			return Ok(response);
 		}
 	}
