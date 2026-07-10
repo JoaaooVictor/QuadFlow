@@ -3,6 +3,7 @@ using Application.Interfaces;
 using Application.UseCases;
 using Domain.Entities;
 using Domain.Interfaces;
+using Domain.ValueObjects;
 using Moq;
 using QuadFlow.SharedKernel.Interfaces;
 
@@ -12,7 +13,6 @@ namespace Tests.UnitTests.Application
 	{
 		private readonly Mock<IUserRepository> _repository;
 		private readonly Mock<IPasswordHash> _hasher;
-		private readonly Mock<IJwtProvider> _jwt;
 		private readonly Mock<IUnitOfWork> _unitOfWork;
 		private readonly UserUseCases _useCase;
 
@@ -20,13 +20,11 @@ namespace Tests.UnitTests.Application
 		{
 			_repository = new();
 			_hasher = new();
-			_jwt = new();
 			_unitOfWork = new();
 
 			_useCase = new UserUseCases(
 				_repository.Object,
 				_unitOfWork.Object,
-				_jwt.Object,
 				_hasher.Object
 			);
 		}
@@ -76,7 +74,7 @@ namespace Tests.UnitTests.Application
 
 			var existingUser = new User(
 				"João",
-				"joao@gmail.com",
+				new Email("joao@gmail.com"),
 				"hash"
 			);
 

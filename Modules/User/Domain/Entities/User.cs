@@ -1,15 +1,18 @@
-﻿namespace Domain.Entities;
+﻿using Domain.ValueObjects;
+
+namespace Domain.Entities;
 
 public sealed class User
 {
 	public int UserId { get; internal set; }
 	public string Name { get; internal set; }
 	public bool Active { get; internal set; }
-	public string Email { get; internal set; }
+	public Email Email { get; internal set; }
 	public string Password { get; internal set; }
 	public DateTime CreatedAt { get; internal set; }
 
-	public User(string name, string email, string password)
+	private User() { }
+	public User(string name, Email email, string password)
 	{
 		this.Name = name;
 		this.Email = email;

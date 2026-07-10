@@ -27,8 +27,7 @@ namespace Infrastructure.Persistence
 				.HasColumnType("VARCHAR(100)");
 
 			builder
-				.Property(u => u.Email)
-				.HasColumnType("VARCHAR(100)");
+				.OwnsOne(x => x.Email, email => { email.Property(x => x.Value).HasColumnName("Email"); });
 		}
 	}
 }

@@ -26,7 +26,7 @@ namespace Infrastructure.Repositories
 		public async Task<User?> GetUserByEmail(string email)
 		{
 			return await _dbContext.Users
-				.FirstOrDefaultAsync(u => u.Email == email);
+				.FirstOrDefaultAsync(u => u.Email.ToString() == email);
 		}
 
 		public async Task<User?> GetUserById(int id)

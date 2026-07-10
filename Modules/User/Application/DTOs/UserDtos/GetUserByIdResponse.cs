@@ -1,4 +1,6 @@
-﻿namespace Application.DTOs.UserDtos
+﻿using Domain.ValueObjects;
+
+namespace Application.DTOs.UserDtos
 {
 	public sealed record GetUserByIdResponse
 	{

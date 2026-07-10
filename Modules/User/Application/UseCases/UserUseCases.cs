@@ -2,6 +2,7 @@
 using Application.Interfaces;
 using Domain.Entities;
 using Domain.Interfaces;
+using Domain.ValueObjects;
 using QuadFlow.SharedKernel.Abstractions;
 using QuadFlow.SharedKernel.Interfaces;
 
@@ -11,14 +12,12 @@ namespace Application.UseCases
 	{
 		private readonly IUserRepository _userRepository;
 		private readonly IUnitOfWork _unitOfWork;
-		private readonly IJwtProvider _jwtProvider;
 		private readonly IPasswordHash _passwordHash;
 
-		public UserUseCases(IUserRepository userRepository, IUnitOfWork unitOfWork, IJwtProvider jwtProvider, IPasswordHash passwordHash)
+		public UserUseCases(IUserRepository userRepository, IUnitOfWork unitOfWork, IPasswordHash passwordHash)
 		{
 			_userRepository = userRepository;
 			_unitOfWork = unitOfWork;
-			_jwtProvider = jwtProvider;
 			_passwordHash = passwordHash;
 		}
 
@@ -35,7 +34,7 @@ namespace Application.UseCases
 			{
 				UserId = userEntity.UserId,
 				Name = userEntity.Name,
-				Email = userEntity.Email,
+				Email = userEntity.Email.Value,
 				Active = userEntity.Active,
 				CreatedAt = userEntity.CreatedAt
 			};
@@ -56,7 +55,7 @@ namespace Application.UseCases
 
 			var user = new User(
 				request.Name,
-				request.Email,
+				new Email(request.Email),
 				passwordHash
 			);
 

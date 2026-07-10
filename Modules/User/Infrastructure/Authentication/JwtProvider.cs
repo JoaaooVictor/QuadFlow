@@ -25,7 +25,7 @@ namespace Infrastructure.Authentication
 
 			var claims = new[]
 			{
-				new Claim(JwtRegisteredClaimNames.Email, user.Email),
+				new Claim(JwtRegisteredClaimNames.Email, user.Email.ToString()),
 				new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
 				new Claim(ClaimTypes.Expired, DateTime.UtcNow.AddMinutes(expireMinutes).ToString())
 			};
