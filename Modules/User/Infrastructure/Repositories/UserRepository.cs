@@ -1,9 +1,10 @@
-﻿using Domain.Entities;
-using Domain.Interfaces;
-using Infrastructure.Persistence;
+﻿using Users.Domain.Entities;
+using Users.Domain.Interfaces;
+using Users.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using SharedKernel.ValueObjects;
 
-namespace Infrastructure.Repositories
+namespace Users.Infrastructure.Repositories
 {
 	public class UserRepository : IUserRepository
 	{
@@ -23,10 +24,10 @@ namespace Infrastructure.Repositories
 			return await _dbContext.Users.ToListAsync();
 		}
 
-		public async Task<User?> GetUserByEmail(string email)
+		public async Task<User?> GetUserByEmail(Email email)
 		{
 			return await _dbContext.Users
-				.FirstOrDefaultAsync(u => u.Email.ToString() == email);
+				.FirstOrDefaultAsync(u => u.Email.Value == email.Value);
 		}
 
 		public async Task<User?> GetUserById(int id)

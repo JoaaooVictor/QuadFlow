@@ -8,8 +8,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\QuadFlow.SharedKernel\QuadFlow.SharedKernel.csproj" />
-    <ProjectReference Include="..\Contracts\Contracts.csproj" />
-    <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Contracts\Users.Contracts.csproj" />
+    <ProjectReference Include="..\Domain\Users.Domain.csproj" />
   </ItemGroup>
 
 </Project>

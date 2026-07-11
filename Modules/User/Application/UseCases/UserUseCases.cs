@@ -1,11 +1,11 @@
-﻿using Application.DTOs.UserDtos;
-using Application.Interfaces;
-using Domain.Entities;
-using Domain.Interfaces;
+﻿using Users.Application.DTOs.UserDtos;
+using Users.Application.Interfaces;
+using Users.Domain.Entities;
+using Users.Domain.Interfaces;
 using QuadFlow.SharedKernel.Abstractions;
 using QuadFlow.SharedKernel.Interfaces;
 
-namespace Application.UseCases
+namespace Users.Application.UseCases
 {
 	public class UserUseCases : IUserUseCases
 	{

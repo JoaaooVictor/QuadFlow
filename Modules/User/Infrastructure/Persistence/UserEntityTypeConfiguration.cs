@@ -1,8 +1,8 @@
-﻿using Domain.Entities;
+﻿using Users.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Infrastructure.Persistence
+namespace Users.Infrastructure.Persistence
 {
 	public class UserEntityTypeConfiguration : IEntityTypeConfiguration<User>
 	{

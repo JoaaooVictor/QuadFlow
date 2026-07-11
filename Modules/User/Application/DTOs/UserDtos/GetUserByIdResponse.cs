@@ -1,4 +1,4 @@
-﻿namespace Application.DTOs.UserDtos
+﻿namespace Users.Application.DTOs.UserDtos
 {
 	public sealed record GetUserByIdResponse
 	{

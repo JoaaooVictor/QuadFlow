@@ -21,8 +21,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\QuadFlow.SharedKernel\QuadFlow.SharedKernel.csproj" />
-    <ProjectReference Include="..\Application\Application.csproj" />
-    <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Application\Users.Application.csproj" />
+    <ProjectReference Include="..\Domain\Users.Domain.csproj" />
   </ItemGroup>
 
 </Project>

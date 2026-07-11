@@ -1,5 +1,5 @@
 ﻿
-using Contracts.DTOs;
+using Users.Contracts.DTOs;
 
 namespace Auth.Application.Interfaces
 {

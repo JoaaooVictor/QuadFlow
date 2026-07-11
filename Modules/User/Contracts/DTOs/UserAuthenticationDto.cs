@@ -1,6 +1,6 @@
 ﻿using SharedKernel.ValueObjects;
 
-namespace Contracts.DTOs;
+namespace Users.Contracts.DTOs;
 
 public class UserAuthenticationDto
 {

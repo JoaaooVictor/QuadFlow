@@ -1,6 +1,6 @@
 ﻿using SharedKernel.ValueObjects;
 
-namespace Application.DTOs.UserDtos
+namespace Users.Application.DTOs.UserDtos
 {
 	public sealed class RegisterUserRequestDto
 	{

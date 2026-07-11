@@ -1,8 +1,8 @@
-﻿using Contracts.DTOs;
+﻿using Users.Contracts.DTOs;
 using QuadFlow.SharedKernel.Abstractions;
 using SharedKernel.ValueObjects;
 
-namespace Contracts.Interfaces;
+namespace Users.Contracts.Interfaces;
 
 public interface IUserAuthenticationService
 {

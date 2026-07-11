@@ -1,7 +1,7 @@
-﻿using Domain.Entities;
+﻿using Users.Domain.Entities;
 using SharedKernel.ValueObjects;
 
-namespace Domain.Interfaces;
+namespace Users.Domain.Interfaces;
 
 public interface IUserRepository
 {

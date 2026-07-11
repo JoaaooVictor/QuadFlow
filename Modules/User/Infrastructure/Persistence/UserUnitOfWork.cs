@@ -1,6 +1,6 @@
 ﻿using QuadFlow.SharedKernel.Interfaces;
 
-namespace Infrastructure.Persistence
+namespace Users.Infrastructure.Persistence
 {
 	public class UserUnitOfWork : IUnitOfWork
 	{

@@ -18,11 +18,11 @@
     <Project Path="Modules/Stock/Tests/Tests.csproj" />
   </Folder>
   <Folder Name="/Modules/User/">
-    <Project Path="Modules/User/Application/Application.csproj" />
-    <Project Path="Modules/User/Contracts/Contracts.csproj" />
-    <Project Path="Modules/User/Domain/Domain.csproj" />
-    <Project Path="Modules/User/Infrastructure/Infrastructure.csproj" />
-    <Project Path="Modules/User/Tests/Tests.csproj" />
+    <Project Path="Modules/User/Application/Users.Application.csproj" />
+    <Project Path="Modules/User/Contracts/Users.Contracts.csproj" />
+    <Project Path="Modules/User/Domain/Users.Domain.csproj" />
+    <Project Path="Modules/User/Infrastructure/Users.Infrastructure.csproj" />
+    <Project Path="Modules/User/Tests/Users.Tests.csproj" />
   </Folder>
   <Project Path="QuadFlow.Api/QuadFlow.Api.csproj" />
   <Project Path="QuadFlow.SharedKernel/QuadFlow.SharedKernel.csproj" Id="7e33b8cb-eeea-4336-8d31-1e9f436989da" />

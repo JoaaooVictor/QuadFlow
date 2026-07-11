@@ -1,8 +1,8 @@
-﻿using Application.DTOs.UserDtos;
-using Domain.Entities;
+﻿using Users.Application.DTOs.UserDtos;
+using Users.Domain.Entities;
 using QuadFlow.SharedKernel.Abstractions;
 
-namespace Application.Interfaces
+namespace Users.Application.Interfaces
 {
 	public interface IUserUseCases
 	{

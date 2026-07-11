@@ -1,6 +1,6 @@
 ﻿using Auth.Application.DTOs;
 using Auth.Application.Interfaces;
-using Contracts.Interfaces;
+using Users.Contracts.Interfaces;
 using QuadFlow.SharedKernel.Abstractions;
 
 namespace Auth.Application.UseCases
@@ -30,7 +30,7 @@ namespace Auth.Application.UseCases
 
 			if (!passwordAuthenticated)
 			{
-				return Result<LoginResponseDto>.Fail("As senhas não conferem");
+				return Result<LoginResponseDto>.Fail("Senha incorreta!");
 			}
 
 			var token = await _jwtProvider.GenerateToken(user);

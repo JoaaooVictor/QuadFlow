@@ -1,9 +1,9 @@
-﻿using Domain.Entities;
+﻿using Users.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using QuadFlow.SharedKernel.Interfaces;
 using System.Reflection;
 
-namespace Infrastructure.Persistence
+namespace Users.Infrastructure.Persistence
 {
 	public class UserDbContext : DbContext
 	{

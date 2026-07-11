@@ -1,13 +1,13 @@
-﻿using Application.Interfaces;
-using Contracts.DTOs;
-using Contracts.Interfaces;
-using Domain.Interfaces;
+﻿using Users.Application.Interfaces;
+using Users.Contracts.DTOs;
+using Users.Contracts.Interfaces;
+using Users.Domain.Interfaces;
 using QuadFlow.SharedKernel.Abstractions;
 using SharedKernel.ValueObjects;
 
-namespace Application.Services
+namespace Users.Application.Services
 {
-	internal class UserAuthenticationService : IUserAuthenticationService
+	public class UserAuthenticationService : IUserAuthenticationService
 	{
 		private readonly IUserRepository _userRepository;
 		private readonly IPasswordHash _passwordHash;

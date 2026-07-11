@@ -1,5 +1,5 @@
-﻿using Application.DTOs.UserDtos;
-using Application.Interfaces;
+﻿using Users.Application.DTOs.UserDtos;
+using Users.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace QuadFlow.Api.Controllers

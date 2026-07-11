@@ -3,6 +3,7 @@
 public sealed record class Email
 {
 	public string Value { get; internal set; }
+	private Email() { }
 
 	public Email(string value)
 	{

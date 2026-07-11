@@ -1,6 +1,6 @@
 ﻿using Auth.Application.Interfaces;
 using Auth.Application.Utils;
-using Contracts.DTOs;
+using Users.Contracts.DTOs;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;

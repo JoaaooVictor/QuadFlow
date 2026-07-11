@@ -1,15 +1,16 @@
-﻿using Application.Interfaces;
-using Application.UseCases;
-using Domain.Interfaces;
-using Infrastructure.Authentication;
-using Infrastructure.Persistence;
-using Infrastructure.Repositories;
-using Infrastructure.Security;
+﻿using Users.Application.Interfaces;
+using Users.Application.UseCases;
+using Users.Application.Services;
+using Users.Contracts.Interfaces;
+using Users.Domain.Interfaces;
+using Users.Infrastructure.Persistence;
+using Users.Infrastructure.Repositories;
+using Users.Infrastructure.Security;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using QuadFlow.SharedKernel.Interfaces;
 
-namespace Infrastructure.Injection
+namespace Users.Infrastructure.Injection
 {
 	public static class InfrastructureUserInjection
 	{
@@ -21,10 +22,10 @@ namespace Infrastructure.Injection
 			services.AddScoped<IUserRepository, UserRepository>();
 
 			// Registro Serviços
-			services.AddScoped<IJwtProvider, JwtProvider>();
 			services.AddScoped<IUserUseCases, UserUseCases>();
 			services.AddScoped<IUnitOfWork, UserUnitOfWork>();
 			services.AddScoped<IPasswordHash, BcryptPasswordHasher>();
+			services.AddScoped<IUserAuthenticationService, UserAuthenticationService>();
 
 			return services;
 		}

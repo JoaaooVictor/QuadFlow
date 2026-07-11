@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace QuadFlow.Api.Controllers
 {
-	[Route("api/[controller]")]
+	[Route("api/auth")]
 	[ApiController]
 	public class AuthController : ControllerBase
 	{
@@ -15,6 +15,7 @@ namespace QuadFlow.Api.Controllers
 		}
 
 		[HttpPost]
+		[Route("login")]
 		public async Task<IActionResult> AuthUser(LoginRequestDto loginRequest)
 		{
 			var response = await _authUserUseCase.LoginUser(loginRequest);
@@ -24,7 +25,7 @@ namespace QuadFlow.Api.Controllers
 				return BadRequest(response.Message);
 			}
 
-			return Ok(response.Message);
+			return Ok(response);
 		}
 	}
 }

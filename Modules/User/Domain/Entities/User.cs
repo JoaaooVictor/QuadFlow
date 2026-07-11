@@ -1,6 +1,6 @@
 ﻿using SharedKernel.ValueObjects;
 
-namespace Domain.Entities;
+namespace Users.Domain.Entities;
 
 public sealed class User
 {
