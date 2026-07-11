@@ -1,5 +1,10 @@
 <Solution>
   <Folder Name="/Modules/" />
+  <Folder Name="/Modules/Auth/">
+    <Project Path="Modules/Auth/Application/Auth.Application.csproj" />
+    <Project Path="Modules/Auth/Infrastructure/Auth.Infrastructure.csproj" />
+    <Project Path="Modules/Auth/Tests/Auth.Tests.csproj" />
+  </Folder>
   <Folder Name="/Modules/Order/">
     <Project Path="Modules/Order/Application/Application.csproj" />
     <Project Path="Modules/Order/Domain/Domain.csproj" />
@@ -14,6 +19,7 @@
   </Folder>
   <Folder Name="/Modules/User/">
     <Project Path="Modules/User/Application/Application.csproj" />
+    <Project Path="Modules/User/Contracts/Contracts.csproj" />
     <Project Path="Modules/User/Domain/Domain.csproj" />
     <Project Path="Modules/User/Infrastructure/Infrastructure.csproj" />
     <Project Path="Modules/User/Tests/Tests.csproj" />

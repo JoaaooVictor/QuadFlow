@@ -1,4 +1,4 @@
-﻿namespace Application.Utils
+﻿namespace Auth.Application.Utils
 {
 	public class JwtConfig
 	{

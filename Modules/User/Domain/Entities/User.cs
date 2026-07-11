@@ -1,4 +1,4 @@
-﻿using Domain.ValueObjects;
+﻿using SharedKernel.ValueObjects;
 
 namespace Domain.Entities;
 

@@ -1,13 +1,13 @@
-﻿using Application.Interfaces;
-using Application.Utils;
-using Domain.Entities;
+﻿using Auth.Application.Interfaces;
+using Auth.Application.Utils;
+using Contracts.DTOs;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace Infrastructure.Authentication
+namespace Auth.Infrastructure.Authentication
 {
 	public class JwtProvider : IJwtProvider
 	{
@@ -16,7 +16,8 @@ namespace Infrastructure.Authentication
 		{
 			_jwtConfig = jwtConfig.Value;
 		}
-		public async Task<string> GenerateToken(User user)
+
+		public async Task<string> GenerateToken(UserAuthenticationDto user)
 		{
 			var key = Encoding.UTF8.GetBytes(_jwtConfig.Key);
 			var issuer = _jwtConfig.Issuer;
@@ -26,7 +27,7 @@ namespace Infrastructure.Authentication
 			var claims = new[]
 			{
 				new Claim(JwtRegisteredClaimNames.Email, user.Email.ToString()),
-				new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+				new Claim(JwtRegisteredClaimNames.Jti, user.UserId.ToString()),
 				new Claim(ClaimTypes.Expired, DateTime.UtcNow.AddMinutes(expireMinutes).ToString())
 			};
 

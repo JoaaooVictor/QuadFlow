@@ -2,7 +2,6 @@
 using Application.Interfaces;
 using Domain.Entities;
 using Domain.Interfaces;
-using Domain.ValueObjects;
 using QuadFlow.SharedKernel.Abstractions;
 using QuadFlow.SharedKernel.Interfaces;
 
@@ -55,7 +54,7 @@ namespace Application.UseCases
 
 			var user = new User(
 				request.Name,
-				new Email(request.Email),
+				request.Email,
 				passwordHash
 			);
 

@@ -1,7 +1,5 @@
 ﻿using Application.DTOs.UserDtos;
 using Application.Interfaces;
-using Application.UseCases;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace QuadFlow.Api.Controllers
@@ -22,7 +20,7 @@ namespace QuadFlow.Api.Controllers
 		{
 			var response = await _userUseCases.Register(request);
 
-			if (!response.Sucess) 
+			if (!response.Sucess)
 			{
 				return BadRequest(response.Message);
 			}
