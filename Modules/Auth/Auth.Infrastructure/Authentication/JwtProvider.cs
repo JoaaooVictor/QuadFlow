@@ -1,11 +1,11 @@
-﻿using Auth.Application.Interfaces;
-using Auth.Application.Utils;
-using Users.Contracts.DTOs;
+﻿using Users.Contracts.DTOs;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Auth.Application.Interfaces;
+using Auth.Application.Utils;
 
 namespace Auth.Infrastructure.Authentication
 {

@@ -1,9 +1,9 @@
-﻿using Application.DTOs.UserDtos;
-using Application.Interfaces;
-using Application.UseCases;
-using Domain.Entities;
-using Domain.Interfaces;
-using Domain.ValueObjects;
+﻿using Users.Application.DTOs.UserDtos;
+using Users.Application.Interfaces;
+using Users.Application.UseCases;
+using Users.Domain.Entities;
+using Users.Domain.Interfaces;
+using SharedKernel.ValueObjects;
 using Moq;
 using QuadFlow.SharedKernel.Interfaces;
 
@@ -36,7 +36,7 @@ namespace Tests.UnitTests.Application
 			var request = new RegisterUserRequestDto
 			{
 				Name = "João",
-				Email = "joao@email.com",
+				Email = new Email("joao@email.com"),
 				Password = "123456"
 			};
 
@@ -68,7 +68,7 @@ namespace Tests.UnitTests.Application
 			var registerUserRequest = new RegisterUserRequestDto
 			{
 				Name = "João",
-				Email = "joao@gmail.com",
+				Email = new Email("joao@gmail.com"),
 				Password = "Teste123"
 			};
 
