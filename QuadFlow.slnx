@@ -2,7 +2,6 @@
   <Folder Name="/Modules/" />
   <Folder Name="/Modules/Auth/">
     <Project Path="Modules/Auth/Auth.Application/Auth.Application.csproj" />
-    <Project Path="Modules/Auth/Auth.Domain/Auth.Domain.csproj" />
     <Project Path="Modules/Auth/Auth.Infrastructure/Auth.Infrastructure.csproj" />
     <Project Path="Modules/Auth/Auth.Tests/Auth.Tests.csproj" />
   </Folder>
