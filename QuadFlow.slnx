@@ -1,21 +1,28 @@
 <Solution>
   <Folder Name="/Modules/" />
   <Folder Name="/Modules/Auth/">
-    <Project Path="Modules/Auth/Application/Auth.Application.csproj" />
-    <Project Path="Modules/Auth/Infrastructure/Auth.Infrastructure.csproj" />
-    <Project Path="Modules/Auth/Tests/Auth.Tests.csproj" />
+    <Project Path="Modules/Auth/Auth.Application/Auth.Application.csproj" />
+    <Project Path="Modules/Auth/Auth.Domain/Auth.Domain.csproj" />
+    <Project Path="Modules/Auth/Auth.Infrastructure/Auth.Infrastructure.csproj" />
+    <Project Path="Modules/Auth/Auth.Tests/Auth.Tests.csproj" />
+  </Folder>
+  <Folder Name="/Modules/Company/">
+    <Project Path="Modules/Company/Company.Application/Company.Application.csproj" />
+    <Project Path="Modules/Company/Company.Domain/Company.Domain.csproj" />
+    <Project Path="Modules/Company/Company.Infrastrucure/Company.Infrastructure.csproj" />
+    <Project Path="Modules/Company/Company.Tests/Company.Tests.csproj" />
   </Folder>
   <Folder Name="/Modules/Order/">
-    <Project Path="Modules/Order/Application/Orders.Application.csproj" />
-    <Project Path="Modules/Order/Domain/Orders.Domain.csproj" />
-    <Project Path="Modules/Order/Infrastructure/Orders.Infrastructure.csproj" />
-    <Project Path="Modules/Order/Tests/Orders.Tests.csproj" />
+    <Project Path="Modules/Order/Orders.Application/Orders.Application.csproj" />
+    <Project Path="Modules/Order/Orders.Domain/Orders.Domain.csproj" />
+    <Project Path="Modules/Order/Orders.Infrastructure/Orders.Infrastructure.csproj" />
+    <Project Path="Modules/Order/Orders.Tests/Orders.Tests.csproj" />
   </Folder>
-  <Folder Name="/Modules/Stock/">
-    <Project Path="Modules/Stock/Application/Stocks.Application.csproj" />
-    <Project Path="Modules/Stock/Domain/Stocks.Domain.csproj" />
-    <Project Path="Modules/Stock/Infrastructure/Stocks.Infrastructure.csproj" />
-    <Project Path="Modules/Stock/Tests/Stocks.Tests.csproj" />
+  <Folder Name="/Modules/Product/">
+    <Project Path="Modules/Product/Application/Products.Application.csproj" />
+    <Project Path="Modules/Product/Domain/Products.Domain.csproj" />
+    <Project Path="Modules/Product/Infrastructure/Products.Infrastructure.csproj" />
+    <Project Path="Modules/Product/Tests/Products.Tests.csproj" />
   </Folder>
   <Folder Name="/Modules/User/">
     <Project Path="Modules/User/Application/Users.Application.csproj" />
