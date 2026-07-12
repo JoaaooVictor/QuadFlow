@@ -10,6 +10,7 @@ public sealed class User
 	public Email Email { get; internal set; }
 	public string Password { get; internal set; }
 	public DateTime CreatedAt { get; internal set; }
+	public bool FirstAcess { get; internal set; }
 
 	private User() { }
 	public User(string name, Email email, string password)
@@ -19,5 +20,6 @@ public sealed class User
 		this.Password = password;
 		this.CreatedAt = DateTime.Now;
 		this.Active = true;
+		this.FirstAcess = true;
 	}
 }

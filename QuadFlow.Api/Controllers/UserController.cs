@@ -8,17 +8,19 @@ namespace QuadFlow.Api.Controllers
 	[ApiController]
 	public class UserController : ControllerBase
 	{
-		private readonly IUserUseCases _userUseCases;
-		public UserController(IUserUseCases userUseCase)
+		private readonly IRegisterUserUseCase _registerUserUseCase;
+		private readonly IGetUserByIdUseCase _getUserByIdUseCase;
+		public UserController(IRegisterUserUseCase userUseCase, IGetUserByIdUseCase getUserByIdUseCase)
 		{
-			_userUseCases = userUseCase;
+			_registerUserUseCase = userUseCase;
+			_getUserByIdUseCase = getUserByIdUseCase;
 		}
 
 		[HttpPost]
 		[Route("create-user")]
 		public async Task<IActionResult> CreateUser(RegisterUserRequestDto request)
 		{
-			var response = await _userUseCases.Register(request);
+			var response = await _registerUserUseCase.Execute(request);
 
 			if (!response.Sucess)
 			{
@@ -32,7 +34,7 @@ namespace QuadFlow.Api.Controllers
 		[Route("get-user-by-id")]
 		public async Task<IActionResult> GetUserById(int id)
 		{
-			var response = await _userUseCases.GetUserById(id);
+			var response = await _getUserByIdUseCase.Execute(id);
 
 			if (!response.Sucess)
 			{

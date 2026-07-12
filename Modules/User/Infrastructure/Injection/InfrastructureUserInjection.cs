@@ -22,10 +22,13 @@ namespace Users.Infrastructure.Injection
 			services.AddScoped<IUserRepository, UserRepository>();
 
 			// Registro Serviços
-			services.AddScoped<IUserUseCases, UserUseCases>();
 			services.AddScoped<IUnitOfWork, UserUnitOfWork>();
 			services.AddScoped<IPasswordHash, BcryptPasswordHasher>();
 			services.AddScoped<IUserAuthenticationService, UserAuthenticationService>();
+
+			// Registro Use Cases
+			services.AddScoped<IGetUserByIdUseCase, GetUserByIdUseCase>(); 
+			services.AddScoped<IRegisterUserUseCase, RegisterUserUseCase>();
 
 			return services;
 		}

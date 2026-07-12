@@ -14,7 +14,7 @@ namespace Tests.UnitTests.Application
 		private readonly Mock<IUserRepository> _repository;
 		private readonly Mock<IPasswordHash> _hasher;
 		private readonly Mock<IUnitOfWork> _unitOfWork;
-		private readonly UserUseCases _useCase;
+		private readonly RegisterUserUseCase _useCase;
 
 		public UserTests()
 		{
@@ -22,7 +22,7 @@ namespace Tests.UnitTests.Application
 			_hasher = new();
 			_unitOfWork = new();
 
-			_useCase = new UserUseCases(
+			_useCase = new RegisterUserUseCase(
 				_repository.Object,
 				_unitOfWork.Object,
 				_hasher.Object
@@ -49,7 +49,7 @@ namespace Tests.UnitTests.Application
 				.Returns("senhaHash");
 
 			// Act
-			var result = await _useCase.Register(request);
+			var result = await _useCase.Execute(request);
 
 			// Assert
 			Assert.True(result.Sucess);
@@ -83,7 +83,7 @@ namespace Tests.UnitTests.Application
 				.ReturnsAsync(existingUser);
 
 			// Act
-			var result = await _useCase.Register(registerUserRequest);
+			var result = await _useCase.Execute(registerUserRequest);
 
 			// Assert
 			Assert.False(result.Sucess);

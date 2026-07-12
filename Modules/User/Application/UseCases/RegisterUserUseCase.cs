@@ -7,41 +7,20 @@ using QuadFlow.SharedKernel.Interfaces;
 
 namespace Users.Application.UseCases
 {
-	public class UserUseCases : IUserUseCases
+	public class RegisterUserUseCase : IRegisterUserUseCase
 	{
 		private readonly IUserRepository _userRepository;
 		private readonly IUnitOfWork _unitOfWork;
 		private readonly IPasswordHash _passwordHash;
 
-		public UserUseCases(IUserRepository userRepository, IUnitOfWork unitOfWork, IPasswordHash passwordHash)
+		public RegisterUserUseCase(IUserRepository userRepository, IUnitOfWork unitOfWork, IPasswordHash passwordHash)
 		{
 			_userRepository = userRepository;
 			_unitOfWork = unitOfWork;
 			_passwordHash = passwordHash;
 		}
 
-		public async Task<Result<GetUserByIdResponse>> GetUserById(int id)
-		{
-			var userEntity = await _userRepository.GetUserById(id);
-
-			if (userEntity is null)
-			{
-				return Result<GetUserByIdResponse>.Fail("Nenhum usuário encontrado");
-			}
-
-			var user = new GetUserByIdResponse
-			{
-				UserId = userEntity.UserId,
-				Name = userEntity.Name,
-				Email = userEntity.Email.Value,
-				Active = userEntity.Active,
-				CreatedAt = userEntity.CreatedAt
-			};
-
-			return Result<GetUserByIdResponse>.Success("Usuário encontrado", user);
-		}
-
-		public async Task<Result> Register(RegisterUserRequestDto request)
+		public async Task<Result> Execute(RegisterUserRequestDto request)
 		{
 			var userExists = await _userRepository.GetUserByEmail(request.Email);
 
