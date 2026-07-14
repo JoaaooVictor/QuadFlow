@@ -1,5 +1,7 @@
 using Auth.Application.Utils;
 using Auth.Infrastructure.Injection;
+using Companies.Infrastructure.Injection;
+using QuadFlow.Api.Injection;
 using Users.Infrastructure.Injection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +14,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddInfrastructureWeb();
+builder.Services.AddInfrastructureCompany(connectionString!);
 builder.Services.AddInfrastructureUser(connectionString!);
 
 var app = builder.Build();
@@ -23,6 +27,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

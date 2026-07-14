@@ -13,18 +13,15 @@ namespace Tests.UnitTests.Application
 	{
 		private readonly Mock<IUserRepository> _repository;
 		private readonly Mock<IPasswordHash> _hasher;
-		private readonly Mock<IUnitOfWork> _unitOfWork;
 		private readonly RegisterUserUseCase _useCase;
 
 		public UserTests()
 		{
 			_repository = new();
 			_hasher = new();
-			_unitOfWork = new();
 
 			_useCase = new RegisterUserUseCase(
 				_repository.Object,
-				_unitOfWork.Object,
 				_hasher.Object
 			);
 		}

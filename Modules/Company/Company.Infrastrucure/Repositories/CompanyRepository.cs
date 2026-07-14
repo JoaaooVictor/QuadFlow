@@ -2,7 +2,6 @@
 using Companies.Domain.Interfaces;
 using Companies.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-using SharedKernel.ValueObjects;
 
 namespace Companies.Infrastructure.Repositories
 {
@@ -13,6 +12,11 @@ namespace Companies.Infrastructure.Repositories
 		public CompanyRepository(CompanyDbContext companyDbContext)
 		{
 			_companyDbContext = companyDbContext;
+		}
+
+		public async Task CreateCompany(Company company)
+		{
+			await _companyDbContext.Companies.AddAsync(company);
 		}
 
 		public async Task<Company?> GetCompanyById(int id)

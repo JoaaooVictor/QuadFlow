@@ -1,5 +1,4 @@
 ﻿using Companies.Domain.Entities;
-using SharedKernel.ValueObjects;
 
 namespace Companies.Domain.Interfaces
 {
@@ -7,5 +6,6 @@ namespace Companies.Domain.Interfaces
 	{
 		Task<Company?> GetCompanyById(int id);
 		Task<Company?> GetCompanyByUserId(int userId);
+		Task CreateCompany(Company company);
 	}
 }

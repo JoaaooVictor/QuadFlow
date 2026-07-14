@@ -10,13 +10,11 @@ namespace Users.Application.UseCases
 	public class RegisterUserUseCase : IRegisterUserUseCase
 	{
 		private readonly IUserRepository _userRepository;
-		private readonly IUnitOfWork _unitOfWork;
 		private readonly IPasswordHash _passwordHash;
 
-		public RegisterUserUseCase(IUserRepository userRepository, IUnitOfWork unitOfWork, IPasswordHash passwordHash)
+		public RegisterUserUseCase(IUserRepository userRepository, IPasswordHash passwordHash)
 		{
 			_userRepository = userRepository;
-			_unitOfWork = unitOfWork;
 			_passwordHash = passwordHash;
 		}
 
@@ -38,7 +36,6 @@ namespace Users.Application.UseCases
 			);
 
 			await _userRepository.CreateUser(user);
-			await _unitOfWork.SaveChangesAsync();
 
 			return Result.Success("Usuário registrado com sucesso");
 		}

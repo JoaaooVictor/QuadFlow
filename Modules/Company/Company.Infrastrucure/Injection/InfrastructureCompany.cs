@@ -1,6 +1,11 @@
-﻿using Companies.Infrastructure.Persistence;
+﻿using Companies.Application.Interfaces;
+using Companies.Application.UseCases;
+using Companies.Domain.Interfaces;
+using Companies.Infrastructure.Persistence;
+using Companies.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using QuadFlow.SharedKernel.Interfaces;
 
 namespace Companies.Infrastructure.Injection
 {
@@ -11,10 +16,12 @@ namespace Companies.Infrastructure.Injection
 			services.AddDbContext<CompanyDbContext>(options => options.UseSqlServer(connectionString));
 
 			// Registro Repositórios
-
-			// Registro Serviços
+			services.AddScoped<ICompanyRepository, CompanyRepository>();
 
 			// Registro Use Cases
+			services.AddScoped<IRegisterCompanyUseCase, RegisterCompanyUseCase>();
+
+			services.AddScoped<IUnitOfWork, CompanyUnitOfWork>();
 
 			return services;
 		}

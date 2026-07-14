@@ -7,10 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="UseCases\" />
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\..\..\QuadFlow.SharedKernel\QuadFlow.SharedKernel.csproj" />
+    <ProjectReference Include="..\Company.Domain\Companies.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,20 +3,24 @@ using Users.Domain.Interfaces;
 using Users.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using SharedKernel.ValueObjects;
+using QuadFlow.SharedKernel.Interfaces;
 
 namespace Users.Infrastructure.Repositories
 {
 	public class UserRepository : IUserRepository
 	{
 		private readonly UserDbContext _dbContext;
-		public UserRepository(UserDbContext context)
+		private readonly IUnitOfWork _unitOfWork;
+		public UserRepository(UserDbContext context, IUnitOfWork unitOfWork)
 		{
 			_dbContext = context;
+			_unitOfWork = unitOfWork;
 		}
 
 		public async Task CreateUser(User user)
 		{
 			await _dbContext.Users.AddAsync(user);
+			await _unitOfWork.SaveChangesAsync();
 		}
 
 		public async Task<List<User>> GetAll()

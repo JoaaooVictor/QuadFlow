@@ -12,7 +12,7 @@ using QuadFlow.SharedKernel.Interfaces;
 
 namespace Users.Infrastructure.Injection
 {
-	public static class InfrastructureUserInjection
+	public static class InfrastructureUser
 	{
 		public static IServiceCollection AddInfrastructureUser(this IServiceCollection services, string connectionString)
 		{
@@ -20,9 +20,9 @@ namespace Users.Infrastructure.Injection
 
 			// Registro Repositórios
 			services.AddScoped<IUserRepository, UserRepository>();
+			services.AddScoped<IUnitOfWork, UserUnitOfWork>();
 
 			// Registro Serviços
-			services.AddScoped<IUnitOfWork, UserUnitOfWork>();
 			services.AddScoped<IPasswordHash, BcryptPasswordHasher>();
 			services.AddScoped<IUserAuthenticationService, UserAuthenticationService>();
 
