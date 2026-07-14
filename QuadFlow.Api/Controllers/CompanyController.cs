@@ -1,6 +1,5 @@
 ﻿using Companies.Application.DTOs;
 using Companies.Application.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace QuadFlow.Api.Controllers

@@ -6,10 +6,10 @@
     <Project Path="Modules/Auth/Auth.Tests/Auth.Tests.csproj" />
   </Folder>
   <Folder Name="/Modules/Company/">
-    <Project Path="Modules/Company/Company.Application/Companies.Application.csproj" />
-    <Project Path="Modules/Company/Company.Domain/Companies.Domain.csproj" />
-    <Project Path="Modules/Company/Company.Infrastrucure/Companies.Infrastructure.csproj" />
-    <Project Path="Modules/Company/Company.Tests/Companies.Tests.csproj" />
+    <Project Path="Modules/Company/Companies.Application/Companies.Application.csproj" />
+    <Project Path="Modules/Company/Companies.Domain/Companies.Domain.csproj" />
+    <Project Path="Modules/Company/Companies.Infrastrucure/Companies.Infrastructure.csproj" />
+    <Project Path="Modules/Company/Companies.Tests/Companies.Tests.csproj" />
   </Folder>
   <Folder Name="/Modules/Order/">
     <Project Path="Modules/Order/Orders.Application/Orders.Application.csproj" />
