@@ -11,6 +11,7 @@ namespace Companies.Domain.Entities
 		public DateTime CreateAt { get; internal set; }
 		public DateTime UpdateAt { get; internal set; }
 
+		private Company(){}
 		public Company(Cnpj cnpj, string name, int userId)
 		{
 			this.UserId = userId;

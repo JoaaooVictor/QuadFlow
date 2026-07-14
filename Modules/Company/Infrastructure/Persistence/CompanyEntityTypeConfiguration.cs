@@ -18,6 +18,9 @@ namespace Companies.Infrastructure.Persistence
 			builder
 				.Property(c => c.Name)
 				.HasMaxLength(150);
+
+			builder
+				.OwnsOne(x => x.Cnpj, cnpj => { cnpj.Property(x => x.Value).HasColumnName("Cnpj").HasMaxLength(20); });
 		}
 	}
 }

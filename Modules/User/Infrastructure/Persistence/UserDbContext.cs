@@ -5,7 +5,7 @@ namespace Users.Infrastructure.Persistence
 {
 	public class UserDbContext : DbContext
 	{
-		public UserDbContext(DbContextOptions options) : base(options) { }
+		public UserDbContext(DbContextOptions<UserDbContext> options) : base(options) { }
 		public DbSet<User> Users { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
