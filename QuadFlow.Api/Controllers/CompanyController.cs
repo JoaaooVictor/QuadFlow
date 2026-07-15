@@ -1,11 +1,13 @@
 ﻿using Companies.Application.DTOs;
 using Companies.Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace QuadFlow.Api.Controllers
 {
-	[Route("api/[controller]")]
+	[Authorize]
 	[ApiController]
+	[Route("api/company")]
 	public class CompanyController : ControllerBase
 	{
 		private readonly IRegisterCompanyUseCase _useCase;

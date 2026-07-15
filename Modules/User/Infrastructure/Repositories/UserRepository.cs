@@ -10,17 +10,17 @@ namespace Users.Infrastructure.Repositories
 	public class UserRepository : IUserRepository
 	{
 		private readonly UserDbContext _dbContext;
-		private readonly IUnitOfWork _unitOfWork;
-		public UserRepository(UserDbContext context, IUnitOfWork unitOfWork)
+		private readonly UserUnitOfWork _userUnitOfWork;
+		public UserRepository(UserDbContext context, UserUnitOfWork userUnitOfWork)
 		{
 			_dbContext = context;
-			_unitOfWork = unitOfWork;
+			_userUnitOfWork = userUnitOfWork;
 		}
 
 		public async Task CreateUser(User user)
 		{
 			await _dbContext.Users.AddAsync(user);
-			await _unitOfWork.SaveChangesAsync();
+			await _userUnitOfWork.SaveChangesAsync();
 		}
 
 		public async Task<List<User>> GetAll()

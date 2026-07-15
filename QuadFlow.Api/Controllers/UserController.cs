@@ -1,6 +1,7 @@
-﻿using Users.Application.DTOs.UserDtos;
-using Users.Application.Interfaces;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Users.Application.DTOs.UserDtos;
+using Users.Application.Interfaces;
 
 namespace QuadFlow.Api.Controllers
 {
@@ -31,6 +32,7 @@ namespace QuadFlow.Api.Controllers
 		}
 
 		[HttpGet]
+		[Authorize]
 		[Route("get-user-by-id")]
 		public async Task<IActionResult> GetUserById(int id)
 		{

@@ -11,8 +11,6 @@ builder.Services.Configure<JwtConfig>(builder.Configuration.GetSection("Jwt"));
 builder.Services.AddAuthConfiguration(builder.Configuration);
 
 builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 builder.Services.AddInfrastructureWeb();
 builder.Services.AddInfrastructureCompany(connectionString!);

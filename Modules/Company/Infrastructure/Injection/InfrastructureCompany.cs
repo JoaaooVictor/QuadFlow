@@ -21,7 +21,9 @@ namespace Companies.Infrastructure.Injection
 			// Registro Use Cases
 			services.AddScoped<IRegisterCompanyUseCase, RegisterCompanyUseCase>();
 
+			// Registro UnitOfWork
 			services.AddScoped<IUnitOfWork, CompanyUnitOfWork>();
+			services.AddScoped<CompanyUnitOfWork>();
 
 			return services;
 		}

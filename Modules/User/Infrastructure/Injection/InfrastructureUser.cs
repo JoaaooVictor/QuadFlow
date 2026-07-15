@@ -20,7 +20,6 @@ namespace Users.Infrastructure.Injection
 
 			// Registro Repositórios
 			services.AddScoped<IUserRepository, UserRepository>();
-			services.AddScoped<IUnitOfWork, UserUnitOfWork>();
 
 			// Registro Serviços
 			services.AddScoped<IPasswordHash, BcryptPasswordHasher>();
@@ -29,6 +28,9 @@ namespace Users.Infrastructure.Injection
 			// Registro Use Cases
 			services.AddScoped<IGetUserByIdUseCase, GetUserByIdUseCase>(); 
 			services.AddScoped<IRegisterUserUseCase, RegisterUserUseCase>();
+
+			// Registro UnitOfWork
+			services.AddScoped<UserUnitOfWork>();
 
 			return services;
 		}

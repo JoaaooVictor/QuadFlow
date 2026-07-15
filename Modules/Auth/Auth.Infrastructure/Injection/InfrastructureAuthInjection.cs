@@ -7,40 +7,38 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-namespace Auth.Infrastructure.Injection
+namespace Auth.Infrastructure.Injection;
+
+public static class InfrastructureAuthInjection
 {
-	public static class InfrastructureAuthInjection
+	public static IServiceCollection AddAuthConfiguration(this IServiceCollection services, IConfiguration configuration)
 	{
-		public static IServiceCollection AddAuthConfiguration(this IServiceCollection services, IConfiguration configuration)
+		var key = configuration["Jwt:Key"];
+		var issuer = configuration["Jwt:Issuer"];
+		var audience = configuration["Jwt:Audience"];
+
+		services.AddScoped<IAuthUserUseCase, AuthUserUseCase>();
+		services.AddScoped<IJwtProvider, JwtProvider>();
+
+		services.AddAuthentication(options =>
 		{
-			var key = configuration["Jwt:Key"];
-			var issuer = configuration["Jwt:Issuer"];
-			var audience = configuration["Jwt:Audience"];
-
-			services.AddAuthentication(options =>
+			options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+			options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+		})
+		.AddJwtBearer(options =>
+		{
+			options.TokenValidationParameters = new TokenValidationParameters
 			{
-				options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-				options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-			})
-			.AddJwtBearer(options =>
-			{
-				options.TokenValidationParameters = new TokenValidationParameters
-				{
-					ValidateIssuer = true,
-					ValidateAudience = true,
-					ValidateLifetime = true,
-					ValidateIssuerSigningKey = true,
-					ValidIssuer = issuer,
-					ValidAudience = audience,
-					IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key!))
-				};
-			});
+				ValidateIssuer = true,
+				ValidateAudience = true,
+				ValidateLifetime = true,
+				ValidateIssuerSigningKey = true,
+				ValidIssuer = issuer,
+				ValidAudience = audience,
+				IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key!))
+			};
+		});
 
-			// Injeção Serviços
-			services.AddScoped<IAuthUserUseCase, AuthUserUseCase>();
-			services.AddScoped<IJwtProvider, JwtProvider>();
-
-			return services;
-		}
+		return services;
 	}
 }

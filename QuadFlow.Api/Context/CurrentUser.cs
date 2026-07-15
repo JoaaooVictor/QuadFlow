@@ -13,7 +13,7 @@ namespace QuadFlow.Api.Services
 			_contextAccessor = contextAccessor;
 		}
 			
-		public int UserId => int.Parse(_contextAccessor.HttpContext!.User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+		public int UserId => int.Parse(_contextAccessor.HttpContext!.User.FindFirst("UserId")!.Value);
 
 		public Email email => new Email(_contextAccessor.HttpContext!.User.FindFirst(ClaimTypes.Email)!.Value);
 	}
