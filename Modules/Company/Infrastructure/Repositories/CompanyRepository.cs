@@ -29,7 +29,7 @@ namespace Companies.Infrastructure.Repositories
 
 		public async Task<Company?> GetCompanyByUserId(int userId)
 		{
-			throw new NotImplementedException();
+			return await _companyDbContext.Companies.FirstOrDefaultAsync(c => c.UserId == userId);
 		}
 	}
 }

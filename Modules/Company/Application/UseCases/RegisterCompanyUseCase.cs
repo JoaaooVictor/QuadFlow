@@ -8,7 +8,7 @@ using System.Net.Http.Headers;
 
 namespace Companies.Application.UseCases
 {
-	public class RegisterCompanyUseCase : IRegisterCompanyUseCase
+	public sealed class RegisterCompanyUseCase : IRegisterCompanyUseCase
 	{
 		private readonly ICompanyRepository _companyRepository;
 		private readonly ICurrentUser _currentUser;

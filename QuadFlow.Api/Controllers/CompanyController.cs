@@ -10,18 +10,34 @@ namespace QuadFlow.Api.Controllers
 	[Route("api/company")]
 	public class CompanyController : ControllerBase
 	{
-		private readonly IRegisterCompanyUseCase _useCase;
+		private readonly IRegisterCompanyUseCase _registerCompanyUseCase;
+		private readonly IGetCompanyByUserUseCase _getCompanyByUserUseCase;
 
-		public CompanyController(IRegisterCompanyUseCase useCase)
+		public CompanyController(IRegisterCompanyUseCase registerCompanyUseCase, IGetCompanyByUserUseCase getCompanyByUserUseCase)
 		{
-			_useCase = useCase;
+			_registerCompanyUseCase = registerCompanyUseCase;
+			_getCompanyByUserUseCase = getCompanyByUserUseCase;
 		}
 
 		[HttpPost]
 		[Route("register-company")]
 		public async Task<IActionResult> RegisterCompany(RegisterCompanyRequestDto registerCompanyRequestDto)
 		{
-			var response = await _useCase.Execute(registerCompanyRequestDto);
+			var response = await _registerCompanyUseCase.Execute(registerCompanyRequestDto);
+
+			if (!response.Sucess)
+			{
+				return BadRequest(response);
+			}
+
+			return Ok(response);
+		}
+
+		[HttpGet]
+		[Route("get-company-by-user-authenticaded")]
+		public async Task<IActionResult> GetCompanyByUserAuthenticated()
+		{
+			var response = await _getCompanyByUserUseCase.Execute();
 
 			if (!response.Sucess)
 			{
