@@ -31,5 +31,11 @@ namespace Companies.Infrastructure.Repositories
 		{
 			return await _companyDbContext.Companies.FirstOrDefaultAsync(c => c.UserId == userId);
 		}
+
+		public async Task UpdateCompany(Company company)
+		{
+			_companyDbContext.Entry(company).State = EntityState.Modified;
+			await _companyUnitOfWork.SaveChangesAsync();
+		}
 	}
 }

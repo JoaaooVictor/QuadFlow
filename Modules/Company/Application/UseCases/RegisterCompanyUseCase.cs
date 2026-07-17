@@ -4,7 +4,6 @@ using Companies.Domain.Entities;
 using Companies.Domain.Interfaces;
 using QuadFlow.SharedKernel.Abstractions;
 using QuadFlow.SharedKernel.Interfaces;
-using System.Net.Http.Headers;
 
 namespace Companies.Application.UseCases
 {

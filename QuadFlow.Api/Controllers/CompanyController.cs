@@ -46,5 +46,19 @@ namespace QuadFlow.Api.Controllers
 
 			return Ok(response);
 		}
+
+		[HttpPut]
+		[Route("update-company")]
+		public async Task<IActionResult> UpdateCompany()
+		{
+			var response = await _getCompanyByUserUseCase.Execute();
+
+			if (!response.Sucess)
+			{
+				return BadRequest(response);
+			}
+
+			return Ok(response);
+		}
 	}
 }

@@ -7,5 +7,6 @@ namespace Companies.Domain.Interfaces
 		Task<Company?> GetCompanyById(int id);
 		Task<Company?> GetCompanyByUserId(int userId);
 		Task CreateCompany(Company company);
+		Task UpdateCompany(Company company);
 	}
 }
