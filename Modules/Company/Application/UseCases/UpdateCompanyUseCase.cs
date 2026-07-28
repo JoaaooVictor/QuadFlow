@@ -17,9 +17,16 @@ namespace Companies.Application.UseCases
 			_currentUser = currentUser;
 		}
 
-		public Task<Result> Execute(UpdateCompanyDto updateCompanyDto)
+		public async Task<Result> Execute(UpdateCompanyDto updateCompanyDto)
 		{
-			throw new NotImplementedException();
+			int userId = _currentUser.UserId;
+
+			if (userId == 0)
+			{
+				return Result.Fail("Usuário não autenticado");
+			}
+
+			var company = await _companyRepository.GetCompanyByUserId(userId);
 		}
 	}
 }
