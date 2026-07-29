@@ -24,5 +24,12 @@ namespace Companies.Domain.Entities
 		{
 			return new Company(cnpj, name, userId);
 		}
+
+		public void Update(Cnpj cnpj, string name)
+		{
+			this.UpdateAt = DateTime.Now;
+			this.Name = name;
+			this.Cnpj = cnpj;
+		}
 	}
 }
