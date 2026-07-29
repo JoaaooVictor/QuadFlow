@@ -12,11 +12,13 @@ namespace QuadFlow.Api.Controllers
 	{
 		private readonly IRegisterCompanyUseCase _registerCompanyUseCase;
 		private readonly IGetCompanyByUserUseCase _getCompanyByUserUseCase;
+		private readonly IGetAllCompaniesUseCase _getAllCompaniesUseCase;
 
-		public CompanyController(IRegisterCompanyUseCase registerCompanyUseCase, IGetCompanyByUserUseCase getCompanyByUserUseCase)
+		public CompanyController(IRegisterCompanyUseCase registerCompanyUseCase, IGetCompanyByUserUseCase getCompanyByUserUseCase, IGetAllCompaniesUseCase getAllCompaniesUseCase)
 		{
 			_registerCompanyUseCase = registerCompanyUseCase;
 			_getCompanyByUserUseCase = getCompanyByUserUseCase;
+			_getAllCompaniesUseCase = getAllCompaniesUseCase;
 		}
 
 		[HttpPost]
@@ -24,6 +26,20 @@ namespace QuadFlow.Api.Controllers
 		public async Task<IActionResult> RegisterCompany(RegisterCompanyRequestDto registerCompanyRequestDto)
 		{
 			var response = await _registerCompanyUseCase.Execute(registerCompanyRequestDto);
+
+			if (!response.Sucess)
+			{
+				return BadRequest(response);
+			}
+
+			return Ok(response);
+		}
+
+		[HttpGet]
+		[Route("get-all-companies")]
+		public async Task<IActionResult> GetAllCompanies()
+		{
+			var response = await _getAllCompaniesUseCase.Execute();
 
 			if (!response.Sucess)
 			{

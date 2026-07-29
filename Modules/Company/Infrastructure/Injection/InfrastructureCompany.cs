@@ -23,6 +23,7 @@ namespace Companies.Infrastructure.Injection
 			services.AddScoped<IRegisterCompanyUseCase, RegisterCompanyUseCase>();
 			services.AddScoped<IGetCompanyByUserUseCase, GetCompanyByUserUseCase>();
 			services.AddScoped<IUpdateCompanyUseCase, UpdateCompanyUseCase>();
+			services.AddScoped<IGetAllCompaniesUseCase, GetAllCompaniesUseCase>();
 
 			// Registro Services
 			services.AddScoped<ICompanyServices, CompanyServices>();

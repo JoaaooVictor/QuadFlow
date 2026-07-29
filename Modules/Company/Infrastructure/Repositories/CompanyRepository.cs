@@ -22,6 +22,11 @@ namespace Companies.Infrastructure.Repositories
 			await _companyUnitOfWork.SaveChangesAsync();
 		}
 
+		public async Task<List<Company>> GetAllCompanies()
+		{
+			return await _companyDbContext.Companies.ToListAsync();
+		}
+
 		public async Task<Company?> GetCompanyById(int id)
 		{
 			return await _companyDbContext.Companies.FirstOrDefaultAsync(c => c.CompanyId == id);
