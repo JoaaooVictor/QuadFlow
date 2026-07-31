@@ -1,6 +1,7 @@
 using Auth.Application.Utils;
 using Auth.Infrastructure.Injection;
 using Companies.Infrastructure.Injection;
+using Products.Infrastructure.Injection;
 using QuadFlow.Api.Injection;
 using Users.Infrastructure.Injection;
 
@@ -15,6 +16,7 @@ builder.Services.AddControllers();
 builder.Services.AddInfrastructureWeb();
 builder.Services.AddInfrastructureCompany(connectionString!);
 builder.Services.AddInfrastructureUser(connectionString!);
+builder.Services.AddInfrastructureProduct(connectionString!);
 
 var app = builder.Build();
 
