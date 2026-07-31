@@ -6,6 +6,7 @@
     <Project Path="Modules/Auth/Auth.Tests/Auth.Tests.csproj" />
   </Folder>
   <Folder Name="/Modules/Company/">
+    <Project Path="Companies.Contracts/Companies.Contracts.csproj" Id="782eddd0-c199-40b6-8f97-4081b893ec1d" />
     <Project Path="Modules/Company/Application/Companies.Application.csproj" />
     <Project Path="Modules/Company/Domain/Companies.Domain.csproj" />
     <Project Path="Modules/Company/Infrastructure/Companies.Infrastructure.csproj" />
