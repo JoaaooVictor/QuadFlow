@@ -8,9 +8,7 @@
 
   <ItemGroup>
     <Folder Include="DTOs\" />
-    <Folder Include="Interfaces\" />
     <Folder Include="Services\" />
-    <Folder Include="UseCases\" />
   </ItemGroup>
 
 </Project>
