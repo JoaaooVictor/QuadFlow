@@ -21,6 +21,11 @@ namespace Products.Infrastructure.Repositories
 			await _productUnitOfWork.SaveChangesAsync();
 		}
 
+		public async Task<List<Product>?> GetAllProducts()
+		{
+			return await _productDbContext.Products.ToListAsync();
+		}
+
 		public async Task<Product?> GetProductById(int id)
 		{
 			return await _productDbContext.Products.FirstOrDefaultAsync(p => p.ProductId == id);

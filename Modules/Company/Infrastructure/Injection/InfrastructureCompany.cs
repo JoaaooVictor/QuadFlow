@@ -1,6 +1,7 @@
 ﻿using Companies.Application.Interfaces;
 using Companies.Application.Services;
 using Companies.Application.UseCases;
+using Companies.Contracts.Interfaces;
 using Companies.Domain.Interfaces;
 using Companies.Infrastructure.Persistence;
 using Companies.Infrastructure.Repositories;
@@ -27,6 +28,7 @@ namespace Companies.Infrastructure.Injection
 
 			// Registro Services
 			services.AddScoped<ICompanyServices, CompanyServices>();
+			services.AddScoped<IGetCompanyByUserService, GetCompanyByUserService>();
 
 			// Registro UnitOfWork
 			services.AddScoped<IUnitOfWork, CompanyUnitOfWork>();

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Products.Domain.Entities;
+using Products.Domain.ValueObjects;
 
 namespace Products.Infrastructure.Persistence
 {
@@ -26,7 +27,13 @@ namespace Products.Infrastructure.Persistence
 				.Property(p => p.Amount);
 
 			builder
-				.OwnsOne(x => x.Price, price => { price.Property(x => x.Value).HasMaxLength(20); });
+				.OwnsOne(x => x.Price, price =>
+				{
+					price.Property(x => x.Value)
+							.HasPrecision(10, 2)
+							.HasColumnName("Price");
+				});
+
 		}
 	}
 }

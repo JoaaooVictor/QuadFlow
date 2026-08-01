@@ -2,18 +2,16 @@
 {
 	public sealed record class Price
 	{
-		public double Value { get; internal set; }
+		public decimal Value { get; }
+
 		private Price() { }
 
-		public Price(double value)
+		public Price(decimal value)
 		{
 			if (value <= 0)
-			{
-				throw new Exception("O valor do produto não pode ser menor ou igual a zero");
-			}
+				throw new Exception("O preço deve ser maior que zero.");
 
-			this.Value = value;
+			Value = value;
 		}
-
 	}
 }

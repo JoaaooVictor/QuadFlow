@@ -6,5 +6,6 @@ namespace Products.Domain.Interfaces
 	{
 		Task CreateProduct(Product product);
 		Task<Product?> GetProductById(int id);
+		Task<List<Product>?> GetAllProducts();
 	}
 }

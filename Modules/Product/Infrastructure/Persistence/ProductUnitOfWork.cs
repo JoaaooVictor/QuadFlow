@@ -1,6 +1,8 @@
-﻿namespace Products.Infrastructure.Persistence
+﻿using QuadFlow.SharedKernel.Interfaces;
+
+namespace Products.Infrastructure.Persistence
 {
-	public class ProductUnitOfWork
+	public class ProductUnitOfWork : IUnitOfWork
 	{
 		private readonly ProductDbContext _productDbContext;
 
