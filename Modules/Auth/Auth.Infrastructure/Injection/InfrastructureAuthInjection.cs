@@ -39,6 +39,17 @@ public static class InfrastructureAuthInjection
 			};
 		});
 
+		services.AddCors(opt =>
+		{
+			opt.AddPolicy("FrontPolicy", policy =>
+			{
+				policy
+				.AllowAnyHeader()
+				.AllowAnyMethod()
+				.AllowAnyOrigin();
+			});
+		});
+
 		return services;
 	}
 }

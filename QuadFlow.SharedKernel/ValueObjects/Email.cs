@@ -19,4 +19,9 @@ public sealed record class Email
 	{
 		return this.Value.ToString();
 	}
+
+	public static Email Create(string email)
+	{
+		return new Email(email);
+	}
 }

@@ -2,6 +2,7 @@
 using Auth.Application.Interfaces;
 using Users.Contracts.Interfaces;
 using QuadFlow.SharedKernel.Abstractions;
+using SharedKernel.ValueObjects;
 
 namespace Auth.Application.UseCases
 {
@@ -18,7 +19,13 @@ namespace Auth.Application.UseCases
 
 		public async Task<Result<LoginResponseDto>> LoginUser(LoginRequestDto loginRequest)
 		{
-			var response = await _userAuthentication.GetUserByEmail(loginRequest.Email);
+			if(loginRequest.Email is null)
+			{
+				return Result<LoginResponseDto>.Fail("Informe um e-mail para o login.");
+			}
+
+			var email = Email.Create(loginRequest.Email);
+			var response = await _userAuthentication.GetUserByEmail(email);
 
 			if (!response.Sucess)
 			{
