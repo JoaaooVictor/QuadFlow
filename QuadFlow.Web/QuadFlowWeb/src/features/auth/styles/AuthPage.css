@@ -1,0 +1,30 @@
+
+.bg-auth-left{
+    background-color: #F0EBD8;
+    width: 30%;
+}
+
+.bg-auth-right{
+    background-color: #3E5C76;
+    width: 70%;
+}
+
+.form-auth{
+    background-color: rgb(224, 224, 224);
+    min-width: 60%;
+}
+
+.form-auth h1{
+    margin-bottom: 10px;
+}
+
+.form-auth div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-auth div input{
+    padding: 10px;
+    border-radius: 10px;
+}
