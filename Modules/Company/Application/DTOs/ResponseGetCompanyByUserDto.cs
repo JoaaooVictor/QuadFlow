@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Companies.Application.DTOs
 {
-	public sealed class ResponseGetCompanyByUserDto
+	public record class ResponseGetCompanyByUserDto
 	{
 		public int CompanyId { get; init; }
 		public string Name { get; init; }
