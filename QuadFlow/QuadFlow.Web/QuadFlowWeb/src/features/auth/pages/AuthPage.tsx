@@ -31,15 +31,15 @@ export default function AuthPage() {
 
     return (
         <main className="relative flex min-h-screen overflow-hidden bg-[#3E5C76]">
-            <section className="hidden w-[35%] items-center justify-center bg-[#F0EBD8] p-10 md:flex">
-                <div className="flex h-full w-full max-w-md items-center justify-center rounded-2xl border-2 border-dashed border-[#3E5C76]/30">
+            <section className="hidden w-[40%] items-center justify-center bg-[#F0EBD8] p-10 md:flex">
+                <div className="flex h-full w-full max-w-md items-center justify-center rounded-2x1">
                     <span className="text-center text-sm font-medium text-[#3E5C76]/60">
-                        <img src="" alt="Ilustração de login"/>
+                        <img src={"./images/login-illustration.png"} alt="Ilustração de login"/>
                     </span>
                 </div>
             </section>
 
-            <section className="flex w-full items-center justify-center px-6 py-10 md:w-[65%]">
+            <section className="flex w-full items-center justify-center px-6 py-10 md:w-[60%]">
                 <form
                     onSubmit={handleLogin}
                     className="w-full max-w-md rounded-2xl bg-[#E0E0E0] p-8 shadow-2xl"
