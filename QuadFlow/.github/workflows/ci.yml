@@ -1,4 +1,4 @@
-name: QuadFlow CI
+name: QuadFlow CI Test
 on:
   push:
     branches:
