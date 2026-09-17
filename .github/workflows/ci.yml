@@ -9,18 +9,18 @@ jobs:
 
     steps: 
       - name: Checkout
-        uses: actions/checkout@v4
-        
+        uses: actions/checkout@v5
+
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: '8.0.x'
 
       - name: Restore
-        run: dotnet restore QuadFlow.sln
+        run: dotnet restore QuadFlow.slnx
 
       - name: Build
-        run: dotnet build QuadFlow.sln --no-restore --configuration Release
+        run: dotnet build QuadFlow.slnx --no-restore --configuration Release
 
       - name: Test
-        run: dotnet test QuadFlow.sln --no-build --configuration Release
+        run: dotnet test QuadFlow.slnx --no-build --configuration Release
