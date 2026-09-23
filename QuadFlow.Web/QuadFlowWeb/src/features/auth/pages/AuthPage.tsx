@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { LoginRequestDto } from "../types/auth.types";
 import { Login } from "../services/auth.services";
 import { useNavigate } from "react-router-dom";
+import loginImage  from "../../../assets/login-image.png";
 
 export default function AuthPage() {
     const [email, setEmail] = useState("");
@@ -34,7 +35,7 @@ export default function AuthPage() {
             <section className="hidden w-[40%] items-center justify-center bg-[#F0EBD8] p-10 md:flex">
                 <div className="flex h-full w-full max-w-md items-center justify-center rounded-2x1">
                     <span className="text-center text-sm font-medium text-[#3E5C76]/60">
-                        <img src={"./images/login-illustration.png"} alt="Ilustração de login"/>
+                        <img src={loginImage} alt="Ilustração de login"/>
                     </span>
                 </div>
             </section>
