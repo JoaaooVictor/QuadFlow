@@ -104,7 +104,6 @@ export default function AuthPage() {
                         Entrar
                     </button>
                 </form>
-
             </section>
         </main>
     );

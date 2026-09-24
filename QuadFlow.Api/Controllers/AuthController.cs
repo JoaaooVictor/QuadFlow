@@ -22,7 +22,7 @@ namespace QuadFlow.Api.Controllers
 
 			if (!response.Sucess)
 			{
-				return BadRequest(response.Message);
+				return Unauthorized(response.Message);
 			}
 
 			return Ok(response);
