@@ -8,11 +8,12 @@ import { toast } from "react-toastify";
 export default function AuthPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     async function handleLogin(event: React.SubmitEvent<HTMLFormElement>) {
         event.preventDefault();
-
+        setLoading(true);
         const request: LoginRequestDto = {
             email,
             password,
@@ -34,6 +35,8 @@ export default function AuthPage() {
 
         } catch (error) {
             toast.error("E-mail ou senha inválidos.");
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -79,10 +82,7 @@ export default function AuthPage() {
                     </div>
 
                     <div className="mb-7">
-                        <label
-                            htmlFor="password"
-                            className="mb-2 block text-sm font-semibold text-[#26384A]"
-                        >
+                        <label htmlFor="password" className="mb-2 block text-sm font-semibold text-[#26384A]">
                             Senha
                         </label>
 
@@ -97,11 +97,8 @@ export default function AuthPage() {
                         />
                     </div>
 
-                    <button
-                        type="submit"
-                        className="w-full rounded-lg bg-[#3E5C76] px-4 py-3 font-semibold text-white transition hover:bg-[#314A61] focus:outline-none focus:ring-2 focus:ring-[#3E5C76] focus:ring-offset-2 active:scale-[0.99]"
-                    >
-                        Entrar
+                    <button type="submit" className="w-full rounded-lg bg-[#3E5C76] px-4 py-3 font-semibold text-white transition hover:bg-[#314A61] focus:outline-none focus:ring-2 focus:ring-[#3E5C76] focus:ring-offset-2 active:scale-[0.99]">
+                        {loading ? "Entrando..." : "Entrar"}
                     </button>
                 </form>
             </section>
