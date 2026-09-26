@@ -1,4 +1,5 @@
 export interface SidebarItemProps{
     title: string,
-    icon: React.ReactNode;
+    icon: React.ReactNode,
+    to: string
 }

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import loginImage from "../../../assets/login-image.png";
 import { toast } from "react-toastify";
 
-export default function AuthPage() {
+export const AuthPage = () =>{
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
