@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
 body {
-  font-family: "Quicksand", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+  font-family: "Google Sans", sans-serif;
 }

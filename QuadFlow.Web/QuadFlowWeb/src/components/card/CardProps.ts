@@ -1,5 +1,6 @@
 export interface CardProps{
-    title: string;
-    color: string;
-    content: string;
+    title: string,
+    value: string,
+    icon: React.ReactNode,
+    format: string
 }

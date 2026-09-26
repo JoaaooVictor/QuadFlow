@@ -1,21 +1,19 @@
 import type { CardProps } from "../card/CardProps";
 
-export const Card = ({ title, color, content }: CardProps) => {
+export const Card = ({ title, value, icon }: CardProps) => {
     return (
-        <article className="w-64 h-32 rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col">
-            <header
-                className="px-4 py-2 text-white font-semibold"
-                style={{ backgroundColor: color }}
-            >
-                {title}
-            </header>
-
-            <main className="flex flex-1 items-center justify-center text-2xl font-bold">
-                {content}
-            </main>
-
-            <footer>
-            </footer>
+        <article className="flex h-30 items-center gap-4 rounded-lg border border-gray-200 bg-white px-6 py-5">
+            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 text-black">
+                {icon}
+            </div>
+            <div>
+                <p className="text-sm font-medium text-gray-400">
+                    {title}
+                </p>
+                <h2 className="text-2xl font-bold text-gray-800">
+                    {value}
+                </h2>
+            </div>
         </article>
     );
 };
