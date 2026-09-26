@@ -8,6 +8,7 @@ import { ProdutosPage } from "../features/produtos/page/ProdutosPage";
 import { AgendaPage } from "../features/agenda/page/AgendaPage";
 import { PlanosPage } from "../features/planos/page/PlanosPage";
 import { ConfiguracaoPage } from "../features/configuracao/page/ConfiguracaoPage";
+import { ProtectedRoute } from "./ProtectedRoute";
 
 export const AppRoutes = () => {
     return (
@@ -15,14 +16,16 @@ export const AppRoutes = () => {
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/auth" element={<AuthPage />} />
-
-                <Route element={<DashboardLayout />}>
-                    <Route path="/dashboard" element={<DashboardPage />} />
-                    <Route path="/comandas" element={<ComandasPage />} />
-                    <Route path="/produtos" element={< ProdutosPage />} />
-                    <Route path="/agenda" element={< AgendaPage/>} />
-                    <Route path="/planos" element={< PlanosPage/>} />
-                    <Route path="/configuracao" element={< ConfiguracaoPage/>} />
+                
+                <Route element={<ProtectedRoute/>}>
+                    <Route element={<DashboardLayout />}>
+                        <Route path="/dashboard" element={<DashboardPage />} />
+                        <Route path="/comandas" element={<ComandasPage />} />
+                        <Route path="/produtos" element={< ProdutosPage />} />
+                        <Route path="/agenda" element={< AgendaPage/>} />
+                        <Route path="/planos" element={< PlanosPage/>} />
+                        <Route path="/configuracao" element={< ConfiguracaoPage/>} />
+                    </Route>
                 </Route>
             </Routes>
         </BrowserRouter>
