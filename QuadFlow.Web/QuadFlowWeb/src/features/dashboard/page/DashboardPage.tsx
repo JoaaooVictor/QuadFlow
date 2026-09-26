@@ -13,7 +13,7 @@ export const DashboardPage = () => {
                     Aqui está um resumo do seu negócio hoje.
                 </p>
             </section>
-            <section className="grid grid-cols-4 gap-4 px-8 py-6">
+            <section className="grid grid-cols-1 gap-4 px-8 py-6 md:grid-cols-2 xl:grid-cols-4">
                 <Card
                     title="Comandas Hoje"
                     value="30"
