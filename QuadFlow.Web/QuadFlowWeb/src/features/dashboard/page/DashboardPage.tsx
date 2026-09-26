@@ -3,7 +3,7 @@ import { Banknote, ClipboardCheck, Hamburger, UserGroup } from "lucide-react";
 
 export const DashboardPage = () => {
     return (
-        <div className="min-h-full bg-gray-100">
+        <div className="min-h-full">
             <section className="px-8 pt-8">
                 <h1 className="text-2xl font-bold text-gray-800">
                     Olá João Victor!
