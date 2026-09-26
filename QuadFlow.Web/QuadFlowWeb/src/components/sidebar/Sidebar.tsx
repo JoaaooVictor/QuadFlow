@@ -57,7 +57,7 @@ export const SideBar = () => {
                         <SideBarItem
                             title="Configurações"
                             icon={<Settings />}
-                            to='/configuracoes'
+                            to='/configuracao'
                         />
                     </li>
                 </ul>
