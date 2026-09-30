@@ -1,14 +1,15 @@
-import { useState } from "react";
+import { use, useState } from "react";
+import { useAuth } from "../../../contexts/AuthProvider";
 import type { LoginRequestDto } from "../types/auth.types";
 import { Login } from "../services/auth.services";
 import { useNavigate } from "react-router-dom";
 import loginImage from "../../../assets/login-image.png";
 import { toast } from "react-toastify";
-
 export const AuthPage = () =>{
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
+    const { login } = useAuth();
     const navigate = useNavigate();
 
     async function handleLogin(event: React.SubmitEvent<HTMLFormElement>) {
@@ -28,7 +29,7 @@ export const AuthPage = () =>{
             }
 
             if (response.status === 200) {
-                localStorage.setItem("token", response.data.value.token);
+                login(response.data.value.token);
                 toast.success(response.data.message);
                 navigate("/dashboard");
             }
