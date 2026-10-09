@@ -27,7 +27,7 @@ export const HomePage = () => {
                             </p>
 
                             <div className="flex flex-wrap gap-4">
-                                <a href="#recursos" className="rounded-lg bg-[#3E5C76] px-6 py-3 font-semibold text-white transition hover:bg-[#304A61]">
+                                <a href="auth" className="rounded-lg bg-[#3E5C76] px-6 py-3 font-semibold text-white transition hover:bg-[#304A61]">
                                     Começar agora
                                 </a>
 
@@ -43,10 +43,7 @@ export const HomePage = () => {
                     </div>
                 </section>
 
-                <section
-                    id="sobre"
-                    className="bg-white px-6 py-20"
-                >
+                <section id="sobre" className="bg-white px-6 py-20">
                     <div className="mx-auto max-w-6xl">
                         <div className="max-w-3xl">
                             <span className="text-sm font-semibold text-[#3E5C76]">
@@ -179,74 +176,7 @@ export const HomePage = () => {
                         </div>
                     </div>
                 </section>
-
-                <section
-                    id="como-funciona"
-                    className="bg-white px-6 py-20"
-                >
-                    <div className="mx-auto max-w-6xl">
-                        <div className="text-center">
-                            <span className="text-sm font-semibold text-[#3E5C76]">
-                                PASSO A PASSO
-                            </span>
-
-                            <h2 className="mt-3 text-3xl font-bold md:text-4xl">
-                                Como funciona?
-                            </h2>
-
-                            <p className="mx-auto mt-6 max-w-2xl leading-7 text-gray-600">
-                                Em poucos passos você já pode começar a usar
-                                o QuadFlow e transformar a gestão da sua quadra.
-                            </p>
-                        </div>
-
-                        <div className="mt-12 grid gap-8 md:grid-cols-3">
-                            <article className="text-center">
-                                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#3E5C76] font-bold text-white">
-                                    1
-                                </div>
-
-                                <h3 className="mt-4 text-xl font-bold">
-                                    Cadastre sua conta
-                                </h3>
-
-                                <p className="mt-3 text-gray-600">
-                                    Crie sua conta de forma rápida e segura.
-                                </p>
-                            </article>
-
-                            <article className="text-center">
-                                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#3E5C76] font-bold text-white">
-                                    2
-                                </div>
-
-                                <h3 className="mt-4 text-xl font-bold">
-                                    Configure seu espaço
-                                </h3>
-
-                                <p className="mt-3 text-gray-600">
-                                    Adicione sua quadra, produtos e equipe.
-                                </p>
-                            </article>
-
-                            <article className="text-center">
-                                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#3E5C76] font-bold text-white">
-                                    3
-                                </div>
-
-                                <h3 className="mt-4 text-xl font-bold">
-                                    Comece a usar
-                                </h3>
-
-                                <p className="mt-3 text-gray-600">
-                                    Gerencie tudo de forma simples e intuitiva.
-                                </p>
-                            </article>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="px-6 py-20 bg-gray-100">
+                <section className="px-6 py-20 bg-white">
                     <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 rounded-2xl bg-[#3E5C76] px-8 py-12 text-center text-white md:flex-row md:text-left">
                         <div>
                             <h2 className="text-3xl font-bold">
