@@ -1,7 +1,26 @@
+import { useEffect } from "react";
 import { Card } from "../../../components/card/Card";
 import { Banknote, ClipboardCheck, Hamburger, UserGroup } from "lucide-react";
+import { DashboardService } from "../services/dashboard.service";
+import { toast } from "react-toastify";
 
 export const DashboardPage = () => {
+    useEffect(() => {
+        async function LoadCompany() {
+            try {
+                var response = await DashboardService();
+
+                if (response) {
+                    toast.success(`Bem vindo de volta! ${response.data.value.cnpj.value}`);
+                    console.log(response.data.value.cnpj.value);
+                }
+            } catch (error) {
+            }
+        }
+
+        LoadCompany();
+    }, []);
+
     return (
         <div className="min-h-full">
             <section className="px-8 pt-8">
